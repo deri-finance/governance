@@ -39,16 +39,12 @@ $(function () {
         let second = time.getUTCSeconds();
         let chour;
         let cday;
-        if(hour<4){
-            chour = shour - hour;
-            cday = sday - day;
-        }else{
-            hour = 24
-            chour = hour - shour;
-            day += 1;
-            cday = sday - day;
+        chour = shour - hour;
+        cday = sday - day;
+        if(hour>4){
+            cday -=1;
+            chour = 24 +chour
         }
-        
         let cmin = smin - min;
         let csecond = ssecond - second;
         let timehtml = `${cday} d ${chour} h ${cmin} m ${csecond} s`;
