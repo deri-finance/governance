@@ -51,7 +51,7 @@ $(function () {
         
         let cmin = smin - min;
         let csecond = ssecond - second;
-        let timehtml = `${cday} day ${chour} : ${cmin} : ${csecond} :`;
+        let timehtml = `${cday} d ${chour} h ${cmin} m ${csecond} s`;
         $('.time').text(`${timehtml}`)
     }
     function vote(){
