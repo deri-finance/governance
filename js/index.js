@@ -18,6 +18,42 @@ $(function () {
         votingoptions = 3;
         $('#vote').attr('disabled',false)
     }
+    time()
+    setInterval(function(){
+        time()
+    },1000)
+    function time (){
+        let dtime = new Date();
+        let dday = dtime.setUTCDate(19);
+        let dhour = dtime.setUTCHours(3);
+        let dmin = dtime.setUTCMinutes(59);
+        let dsecond = dtime.setUTCSeconds(59);
+        let sday = dtime.getUTCDate();
+        let shour = dtime.getUTCHours();
+        let smin = dtime.getUTCMinutes();
+        let ssecond = dtime.getUTCSeconds();
+        let time = new Date();
+        let day = time.getUTCDate();
+        let hour = time.getUTCHours();
+        let min = time.getUTCMinutes();
+        let second = time.getUTCSeconds();
+        let chour;
+        let cday;
+        if(hour<4){
+            chour = shour - hour;
+            cday = sday - day;
+        }else{
+            hour = 24
+            chour = hour - shour;
+            day += 1;
+            cday = sday - day;
+        }
+        
+        let cmin = smin - min;
+        let csecond = ssecond - second;
+        let timehtml = `${cday} day ${chour} : ${cmin} : ${csecond} :`;
+        $('.time').text(`${timehtml}`)
+    }
     function vote(){
         let button = $('#vote')
         if(votingoptions){
