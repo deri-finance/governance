@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>governance</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="bridge">
+        <div class="nav">
+            <div class="logo">
+                <a target="_blank" href="https://deri.finance">
+                    <img src="./img/logo2.png" />
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="https://deri.finance" style="color: #747474 !important;">Home</a>
+                </li>
+                <li>
+                    <a href="https://exchange.deri.finance/#/liquidity" style="color: #747474 !important;">Mining</a>
+                </li>
+                <li>
+                    <a href="https://exchange.deri.finance" style="color: #747474 !important;">Exchange</a>
+                </li>
+                <li style="color: #fff;">
+                    Governance
+                    <div class="bar"></div>
+                </li>
+                <li >
+                    <a href="https://bridge.deri.finance" style="color: #747474 !important;">Bridge</a>
+                </li>
+                <li class="ref">
+                    References
+                    <ul class="dropdown-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-540">
+                            <a
+                                href="https://github.com/deri-finance/whitepaper/blob/master/deri_whitepaper.pdf">Whitepaper</a>
+                        </li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-540">
+                            <a
+                                href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Deri-v1.0.pdf">Code
+                                Audit</a>
+                        </li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-541">
+                            <a href="https://deri.finance/faq.html">FAQ</a>
+                        </li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-541">
+                            <a href="https://deri.finance/guide.html">Guide</a>
+                        </li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-541">
+                            <a href="https://github.com/deri-finance/">Github</a>
+                        </li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-541">
+                            <a href="https://deri.finance/setallowance.html">Tools</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://deri.finance/team.html" style="color: #747474 !important; ">Team</a>
+                </li>
+                
+            </ul>
+            <div class="connectw" style='text-align: right;'>
+                <button class="connect">
+                    <span class="spinner spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                        style="display: none"></span>
+                    Connect to Wallet
+                </button>
+                <button class="connect" id='adderssbtn'>
+                    <i class="netlogo"></i> <span class="nettext">ETH </span> : <span id='adderss'></span>
+                </button>
+                
+                <br>
+                <span class="woor" style="color: red;"></span>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="flex">
+                <div>
+                    DIP1:
+                    Please vote for one of the following options:<br><br>
+
+                    I. Share transaction fee with the DERI holders:<br>
+                    20% of the transaction fee will be put into a pool, in which one can stake DERI to get xDERI. xDERI holders will share the transaction fee income of the pool.
+                    <br><br>
+                    II. Buy back DERI with transaction fee income:<br>
+                    20% of the transaction fee will be put into a DAO fund, which is to regularly buy back DERI from secondary market and burned (i.e. recycled to be mined again).
+                    <br><br>
+                    III. Keep the status quo
+                </div>
+            </div>
+            <div class="radio">
+                <div>
+                    <input type="radio" name="network" id='eth' /> <Label for="eth">I</Label><br>
+                    <input type="radio" name="network" id='bsc' /> <Label for="bsc">II</Label><br>
+                    <input type="radio" name="network" id='heco' /> <Label for="heco">III</Label><br>
+                </div>
+                <div>
+                    <button id="vote" disabled >
+                        <span
+                            class="spinner spinner-border spinner-border-sm"
+                            role="status"
+                            aria-hidden="true"
+                            style="display: none"
+                        ></span>
+                        VOTE
+                    </button>
+                </div>
+                <div class="checked">
+                    Your vote : <span id="vote_o"></span>
+                </div>
+                <div>
+                    Your voting power:  <span class="power"></span> 
+                </div>
+                <br>
+                <div>
+                    Voting rules:<br><br>
+                    1. Your voting power is your DERI balance + the corresponding DERI amount of your DERI-USDT SLP balance on Sushiswap as of the deadline. The precise formula is:<br>
+                        Voting Power = balanceOf(DERI) + balanceOf(DERI-USDT SLP) * totalDERIonSushi / totalSupply(DERI-USDT SLP)<br><br>
+                    2. You can choose any of the 3 chains (ETH/BSC/HECO) to sign your vote by the deadline<br><br>
+                    3. Voting Deadline = 2021 March 19th 4:00:00AM UTC<br><br>
+                    4. A snapshot will be taken at the block at deadline and used to calculate the result. That is, if you vote before the deadline but have transferred your DERI or SLP before deadline, it is the balance at the deadline that counts.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/web/jquery-1.10.2.min.js"></script>
+    <script src="./js/web/bootstrap.min.js"></script>
+    <script src='./js/web/bignumber.min.js'></script>
+    <script src="./js/web/web3-1.3.0.min.js"></script>
+    <script src="./js/deri_vote.js"></script>
+    <script src="./js/chain.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

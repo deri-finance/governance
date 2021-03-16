@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.bridge {
+  background-color: #19202b !important;
+  color: #ffffff;
+  position: relative;
+}
+.bridge .nav {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141924;
+}
+.bridge .nav .logo {
+  height: 32px;
+  margin-left: 40px;
+}
+.bridge .nav .logo img {
+  width: 110px;
+  height: 100%;
+}
+.bridge .nav ul {
+  margin-bottom: 0;
+  position: absolute;
+  right: 270px;
+}
+.bridge .nav ul li {
+  float: left;
+  list-style: none;
+  margin-left: 30px;
+  color: #747474;
+}
+.bridge .nav ul li .bar {
+  position: absolute;
+  top: 35px;
+  left: 272px;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #09E4A2 0%, #00A9FF 100%);
+  border-radius: 3px;
+  margin: 12px auto;
+}
+.bridge .nav ul .ref:hover .dropdown-menu {
+  display: block;
+}
+.bridge .nav ul .dropdown-menu {
+  background-color: #353c40;
+  margin-left: 327px;
+}
+.bridge .nav ul .dropdown-menu li {
+  float: none;
+  margin-top: 10px;
+}
+.bridge .nav ul .dropdown-menu li a {
+  color: #747474;
+}
+.bridge .nav .connectw {
+  margin-right: 40px;
+}
+.bridge .nav .connectw .connect {
+  width: 200px;
+  height: 40px;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+  border-radius: 41px;
+  border: 0;
+  color: #fff;
+}
+.bridge .nav .connectw #adderssbtn {
+  display: none;
+  color: #fff;
+}
+.bridge .nav .connectw .netlogo {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../img/eth.png');
+  background-size: 100%;
+}
+.bridge .container-fluid .flex {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  align-items: center;
+}
+.bridge .container-fluid .radio {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.bridge .container-fluid .radio #vote {
+  background-image: linear-gradient(90deg, #09d3af 0%, #09b8c2 18%, #0965ff 100%);
+  border-radius: 24px;
+  height: 38px;
+  border: 0;
+  color: #fff;
+  width: 200px;
+}
