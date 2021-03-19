@@ -1,55 +1,10 @@
 $(function () {
     var adderss,type = 0,votingoptions;
     var contract = new Chain();
-    $('#eth').on('click', checketh);
-    $('#bsc').on('click', checkbsc);
-    $('#heco').on('click', checkheco);
     $('#vote').on('click',vote)
     connectWallet();
-    function checketh(){
-        votingoptions = 1;
-        $('#vote').attr('disabled',false)
-    }
-    function checkbsc(){
-        votingoptions = 2;
-        $('#vote').attr('disabled',false)
-    }
-    function checkheco(){
-        votingoptions = 3;
-        $('#vote').attr('disabled',false)
-    }
-    time()
-    setInterval(function(){
-        time()
-    },1000)
-    function time (){
-        let dtime = new Date();
-        let dday = dtime.setUTCDate(19);
-        let dhour = dtime.setUTCHours(3);
-        let dmin = dtime.setUTCMinutes(59);
-        let dsecond = dtime.setUTCSeconds(59);
-        let sday = dtime.getUTCDate();
-        let shour = dtime.getUTCHours();
-        let smin = dtime.getUTCMinutes();
-        let ssecond = dtime.getUTCSeconds();
-        let time = new Date();
-        let day = time.getUTCDate();
-        let hour = time.getUTCHours();
-        let min = time.getUTCMinutes();
-        let second = time.getUTCSeconds();
-        let chour;
-        let cday;
-        chour = shour - hour;
-        cday = sday - day;
-        if(hour>4){
-            cday -=1;
-            chour = 24 +chour
-        }
-        let cmin = smin - min;
-        let csecond = ssecond - second;
-        let timehtml = `${cday} d ${chour} h ${cmin} m ${csecond} s`;
-        $('.time').text(`${timehtml}`)
-    }
+    
+    
     function vote(){
         let button = $('#vote')
         if(votingoptions){
