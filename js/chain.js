@@ -97,7 +97,7 @@ class Chain {
         };
         this.states = {};
         this.chanId = null;
-       
+
     }
 
     async connectWallet() {
@@ -123,6 +123,13 @@ class Chain {
     async initialize(index=0,type) {
         await this._initializeContracts(index,type);
         await this._bindEvent();
+    }
+
+    async getUserWalletBalence(account){
+
+        let balance = await this.web3.eth.getBalance(account);
+        const res = Web3.utils.fromWei(balance)
+        return res
     }
 
     //================================================================================
@@ -164,7 +171,7 @@ class Chain {
         this.ethereum.on('chainChanged', (chainId) => {
             window.location.reload();
         })
-        
+
     }
 
     async _call(contract, func, params=[]) {
@@ -189,7 +196,7 @@ class Chain {
 
     async _transactPool(contract, func, params=[]) {
         let signed = [this.oracle.timestamp, this.oracle.price, this.oracle.v, this.oracle.r, this.oracle.s];
-       
+
         let gas = 0;
         for (let i = 0; i < 20; i++) {
             try {
@@ -223,7 +230,7 @@ class Chain {
         }
     }
 
-    
+
 
 
     //================================================================================

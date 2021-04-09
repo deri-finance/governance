@@ -1,68 +1,78 @@
 $(function () {
-    var adderss,type = 0,votingoptions;
+    var adderss, type = 0, votingoptions;
     var contract = new Chain();
-    $('#vote').on('click',vote)
+    $('#vote').on('click', vote)
     connectWallet();
-    
-    
-    function vote(){
+
+    $('#connect_wallet').click(
+        function () {
+            connectWallet();
+        }
+    )
+
+
+    function vote() {
         let button = $('#vote')
-        if(votingoptions){
+        if (votingoptions) {
             disableButton(button)
-            contract.vote(votingoptions).then(res=>{
+            contract.vote(votingoptions).then(res => {
                 enableButton(button)
                 getvotingOptions()
-            }).catch(err=>{
+            }).catch(err => {
                 enableButton(button)
                 getvotingOptions()
             })
-        }else{
+        } else {
 
         }
     }
-    function getvotingOptions(){
-        contract.getvotingOptions().then(res=>{
-            console.log(res)
+
+    function getvotingOptions() {
+        contract.getvotingOptions().then(res => {
             let text;
-            if(res == 1){
+            if (res == 1) {
                 text = 'I'
             }
-            if(res == 2){
+            if (res == 2) {
                 text = 'II'
             }
-            if(res == 3){
+            if (res == 3) {
                 text = 'III'
             }
-            if(res==0){
+            if (res == 0) {
                 text = ''
             }
             $('#vote_o').text(`${text}`)
         })
     }
+
     function connectWallet() {
         contract.connectWallet().then((res) => {
             if (res.success) {
-                let walletid = ethereum.networkVersion;
-                if(walletid == 1){
+                let walletid = ethereum.networkVersion || ethereum.chainId;
+                if (walletid == 1) {
                     type = 0;
-                    $('.netlogo').css(
-                        "background-image",'url(../img/eth.png)'
-                    );
-                    $('.nettext').text('ETH');
-                }
-                if(walletid == 56){
+                    $('#netlogo').attr("src", "./img/logo-ethereum.png")
+                    $('#nettext').text('ETHEREUM');
+                    $('#walletSymbol').text('ETH');
+                } else if (walletid == 56) {
                     type = 1;
-                    $('.netlogo').css(
-                        "background-image",'url(../img/bsc.png)'
-                    );
-                    $('.nettext').text('BSC');
-                }
-                if(walletid == 128){
+                    $('#netlogo').attr("src", "./img/logo-bsc.png")
+                    // $('.netlogo').css(
+                    //     "background-image",'url(../img/bsc.png)'
+                    // );
+                    $('#nettext').text('BSC');
+                    $('#walletSymbol').text('BNB');
+                } else if (walletid == 128) {
                     type = 2;
-                    $('.netlogo').css(
-                        "background-image",'url(../img/heco.png)'
-                    );
-                    $('.nettext').text('HECO');
+                    $('#netlogo').attr("src", "./img/logo-heco.png")
+                    $('#nettext').text('HECO');
+                    $('#walletSymbol').text('HT');
+                } else {
+                    $('#noNetworkText').text('Unsupported Chain ID ' + walletid)
+                    $('#noNetwork').show()
+                    $('#connect_wallet').hide();
+                    return
                 }
                 contract.initialize(0, type).then(() => {
                     adderss = contract.account
@@ -72,23 +82,29 @@ $(function () {
                         "***" +
                         account.slice(account.length - 4, account.length);
                     $('#adderss').text(account);
-                    $('.connect').hide();
-                    $('#adderssbtn').show();
+                    $('#connect_wallet').hide();
+                    $('#adderssbtn').css('display', 'inline');
+                    $('#network_text_logo').css('display', 'inline');
+
+                    contract.getUserWalletBalence(contract.account).then((res) => {
+
+                        $('#wallet').text(parseFloat(res).toFixed(4));
+                    });
+
                     getvotingOptions();
-                    getDeriVotingPower(+chainId,contract.account).then((res) => {
-                        console.log(res)
+                    getDeriVotingPower(+chainId, contract.account).then((res) => {
                         let power;
                         let balanceOfDeri = +res.balanceOfDeri;
                         let balanceOfSlp = +res.balanceOfSlp;
                         let totalDeriOnSushi = +res.totalDeriOnSushi;
                         let totalSupply = +res.totalSupply;
                         let tot;
-                        if(totalSupply == 0){
+                        if (totalSupply == 0) {
                             tot = 0;
                             power = balanceOfDeri
-                        }else{
-                            power = balanceOfDeri + (balanceOfSlp*totalDeriOnSushi/totalSupply)
-                            tot = balanceOfSlp*totalDeriOnSushi/totalSupply
+                        } else {
+                            power = balanceOfDeri + (balanceOfSlp * totalDeriOnSushi / totalSupply)
+                            tot = balanceOfSlp * totalDeriOnSushi / totalSupply
                         }
                         $('.power').text(`${balanceOfDeri} + ${tot} = ${power}`)
                     });
@@ -98,10 +114,12 @@ $(function () {
             }
         })
     }
+
     function disableButton(button) {
         button.find("span.spinner").show();
         button.attr("disabled", true);
     }
+
     function enableButton(button) {
         button.find("span.spinner").hide();
         button.attr("disabled", false);
