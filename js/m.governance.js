@@ -5,12 +5,12 @@ function to_index() {
 var docs_show = false
 
 $(function () {
-    $('#logo_svg').click(
+    $('.logo_svg').click(
         function () {
             to_index()
         }
     )
-    $('#DERI_svg').click(
+    $('.DERI_svg').click(
         function () {
             to_index()
         }
