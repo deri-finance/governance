@@ -125,7 +125,7 @@
   display: none;
   font-weight: 300;
   line-height: 33px;
-  font-family: korolev;
+  font-family: Arial MT;
 }
 .bridge .nav .connect button {
   height: 48px;
@@ -147,18 +147,18 @@
 .bridge .nav .connect button .address {
   color: #569BDA;
   margin-left: 5px;
-  font-family: korolev;
+  font-family: Arial MT;
 }
 .bridge .nav .connect .nav_btn {
   text-align: center;
   font-weight: 300;
-  font-family: Korolev;
+  font-family: Arial MT;
 }
 .bridge .nav .connect .connect_btn {
   width: 220px;
   text-align: center;
   font-weight: 300;
-  font-family: Korolev;
+  font-family: Arial MT;
 }
 .bridge .nav .connect #noNetwork {
   color: #E35061;
