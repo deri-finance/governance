@@ -80,7 +80,7 @@ $(function () {
                     let account = contract.account;
                     let chainId = contract.chanId
                     account = account.slice(0, 6) +
-                        "***" +
+                        "..." +
                         account.slice(account.length - 4, account.length);
                     $('#adderss').text(account);
                     $('#connect_wallet').hide();
