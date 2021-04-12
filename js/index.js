@@ -49,7 +49,8 @@ $(function () {
     function connectWallet() {
         contract.connectWallet().then((res) => {
             if (res.success) {
-                let walletid = ethereum.networkVersion || ethereum.chainId;
+                window.ethereum.request({ method: "net_version" }).then(id=>{
+                   let walletid = id;
                 if (walletid == 1) {
                     type = 0;
                     $('#netlogo').attr("src", "./img/logo-ethereum.png")
@@ -109,6 +110,8 @@ $(function () {
                         $('.power').text(`${balanceOfDeri} + ${tot} = ${power}`)
                     });
                 })
+                })
+                
             } else {
                 alert('Cannot connect wallet')
             }
