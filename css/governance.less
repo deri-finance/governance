@@ -29,6 +29,10 @@
     font-weight: 300;
     position: relative;
 
+    .nav_mean {
+      width: 100%;
+    }
+
     #logo_svg {
       margin-top: 15px;
       height: 50px;
@@ -107,68 +111,57 @@
     }
 
     .connect {
-      height: 54px;
-      position: absolute;
+      height: 80px;
       font-size: 16px;
       font-weight: 300;
-      margin: 16px 0;
-      right: 40px;
-      display: inline;
-
-      #adderssbtn {
-        position: relative;
-        display: none;
-      }
+      float: right;
+      display: flex;
+      align-items: center;
 
       .network_text_logo {
-        position: relative;
-        display: inline;
-        //align-items: center;
-        margin-right: 13px;
-
-        .logo_text {
-          position: relative;
-          margin-left: 16px;
-          display: inline;
-          color: rgb(204, 204, 204);
-        }
 
         i {
-          position: relative;
-          //display: inline-block;
+          display: inline-block;
           width: 40px;
           height: 40px;
-          display: inline;
         }
 
         .ETH {
-          position: relative;
           background-image: url('../img/logo-ethereum.png');
           background-position: 15px;
           background-repeat: no-repeat;
         }
 
         .BNB {
-          position: relative;
           background-image: url('../img/logo-bsc.png');
           background-repeat: no-repeat;
         }
 
         .HT {
-          position: relative;
           background-image: url('../img/logo-heco.png');
           background-position: 15px;
           background-repeat: no-repeat;
         }
       }
 
+      .logo_text {
+        margin-left: 16px;
+        display: inline;
+        margin-right: 13px;
+      }
+
+      #adderssbtn {
+        display: none;
+        font-weight: 300;
+        line-height: 33px;
+        font-family: korolev;
+      }
+
+
       button {
-        position: relative;
         height: 48px;
         padding-left: 14px;
         padding-right: 14px;
-        word-spacing: 1px;
-        letter-spacing: -0.5px;
         color: #FFFFFF;
         background-color: #0D0E0F;
         font-weight: 300;
@@ -177,7 +170,7 @@
         background-size: 100% 100%;
         //background-repeat: no-repeat;
         // box-shadow: -3px -3px 3px rgba(163, 163, 163, 0.3);
-        //border-radius: 17px;
+        border-radius: 17px;
         outline: 0 none !important;
         border: 0;
         display: inline;
@@ -186,26 +179,26 @@
         //blr: expression(this.onFocus=this.blur());
 
         .address {
-          position: relative;
           color: #569BDA;
           margin-left: 5px;
+          font-family: korolev;
         }
       }
 
       .nav_btn {
-        position: relative;
-        width: 220px;
         text-align: center;
+        font-weight: 300;
+        font-family: Korolev;
       }
 
       .connect_btn {
-        position: relative;
         width: 220px;
         text-align: center;
+        font-weight: 300;
+        font-family: Korolev;
       }
 
       #noNetwork {
-        position: relative;
         color: #E35061;
         display: none;
       }

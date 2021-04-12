@@ -70,7 +70,7 @@ $(function () {
                     $('#nettext').text('HECO');
                     $('#walletSymbol').text('HT');
                 } else {
-                    $('#noNetworkText').text('Unsupported Chain ID ' + walletid)
+                    $('#noNetworkText').text('Unsupported Chain ID ' + walletid + '!')
                     $('#noNetwork').show()
                     $('#connect_wallet').hide();
                     return
@@ -111,7 +111,7 @@ $(function () {
                     });
                 })
                 })
-                
+
             } else {
                 alert('Cannot connect wallet')
             }

@@ -16,62 +16,64 @@
 
 <div class="bridge">
     <div class="nav">
-        <img id="logo_svg" src="./img/logo.svg" alt='DERI'>
-        <img id="DERI_svg" src="./img/DEFI.svg" alt='DERI'>
-        <ul id="index">
-            <li class="menu_li"><a href="http://app.deri.finance/#/mining" class="dark">Mining</a></li>
-            <li class="menu_li"><a href="http://app.deri.finance/#/lite" class="dark">Trade</a></li>
-            <li class="menu_li"><a href="https://governance.deri.finance" class="light">Governance</a></li>
-            <li class="menu_li"><a href="https://bridge.deri.finance" class="dark">Bridge</a></li>
-            <li class="menu_li" id="Docs"><a href="https://docs.deri.finance" class="dark">Docs</a>
-                <svg class="Zi Zi--ArrowDown ContentItem-arrowIcon" fill="currentColor" viewBox="0 0 24 24" width="24"
-                     height="24">
-                    <path
-                            d="M12 13L8.285 9.218a.758.758 0 0 0-1.064 0 .738.738 0 0 0 0 1.052l4.249 4.512a.758.758 0 0 0 1.064 0l4.246-4.512a.738.738 0 0 0 0-1.052.757.757 0 0 0-1.063 0L12.002 13z"
-                            fill-rule="evenodd"></path>
-                </svg>
-                <div id="docs_index_outer" style="display:none">
-<!--                                    <div id="docs_index_outer">-->
-                    <ul id="docs_index">
-                        <li class="docs_li">
-                            <a class="dark"
-                               href="https://github.com/deri-finance/whitepaper/blob/master/deri_whitepaper.pdf">Whitepaper</a>
-                        </li>
-                        <li class="docs_li">
-                            <a class="dark"
-                               href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Deri-v1.0.pdf">Code
-                                Audit</a></li>
-                        <li class="docs_li">
-                            <a class="dark" href="https://deri.finance/#/team">Team</a></li>
-                        <li class="docs_li">
-                            <a class="dark" href="https://docs.deri.finance/faq">FAQ</a></li>
-                        <li class="docs_li">
-                            <a class="dark" href="https://docs.deri.finance/guides">Guide</a></li>
-                        <li class="docs_li">
-                            <a class="dark" href="https://github.com/deri-finance/">Github</a></li>
+        <div class="nav_mean">
+            <img id="logo_svg" src="./img/logo.svg" alt='DERI'>
+            <img id="DERI_svg" src="./img/DEFI.svg" alt='DERI'>
+            <ul id="index">
+                <li class="menu_li"><a href="http://app.deri.finance/#/mining" class="dark">Mining</a></li>
+                <li class="menu_li"><a href="http://app.deri.finance/#/lite" class="dark">Trade</a></li>
+                <li class="menu_li"><a href="https://governance.deri.finance" class="light">Governance</a></li>
+                <li class="menu_li"><a href="https://bridge.deri.finance" class="dark">Bridge</a></li>
+                <li class="menu_li" id="Docs"><a href="https://docs.deri.finance" class="dark">Docs</a>
+                    <svg class="Zi Zi--ArrowDown ContentItem-arrowIcon" fill="currentColor" viewBox="0 0 24 24"
+                         width="24"
+                         height="24">
+                        <path
+                                d="M12 13L8.285 9.218a.758.758 0 0 0-1.064 0 .738.738 0 0 0 0 1.052l4.249 4.512a.758.758 0 0 0 1.064 0l4.246-4.512a.738.738 0 0 0 0-1.052.757.757 0 0 0-1.063 0L12.002 13z"
+                                fill-rule="evenodd"></path>
+                    </svg>
+                    <div id="docs_index_outer" style="display:none">
+                        <!--                                    <div id="docs_index_outer">-->
+                        <ul id="docs_index">
+                            <li class="docs_li">
+                                <a class="dark"
+                                   href="https://github.com/deri-finance/whitepaper/blob/master/deri_whitepaper.pdf">Whitepaper</a>
+                            </li>
+                            <li class="docs_li">
+                                <a class="dark"
+                                   href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Deri-v1.0.pdf">Code
+                                    Audit</a></li>
+                            <li class="docs_li">
+                                <a class="dark" href="https://deri.finance/#/team">Team</a></li>
+                            <li class="docs_li">
+                                <a class="dark" href="https://docs.deri.finance/faq">FAQ</a></li>
+                            <li class="docs_li">
+                                <a class="dark" href="https://docs.deri.finance/guides">Guide</a></li>
+                            <li class="docs_li">
+                                <a class="dark" href="https://github.com/deri-finance/">Github</a></li>
 
-                    </ul>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="connect">
+                <div class="network_text_logo">
+                    <img id="netlogo" src="" alt="">
                 </div>
-            </li>
-        </ul>
-        <div class="connect">
-            <div class="network_text_logo">
-                <img id="netlogo" src="" alt="">
                 <span class="logo_text" id='nettext'></span>
+                <button class="nav_btn connect_btn" id="connect_wallet">
+                    Connect Wallet
+                </button>
+                <button class="nav_btn" id='adderssbtn'>
+                    <span id="wallet"></span>
+                    <span id="walletSymbol"></span>
+                    <span class="address" id='adderss'></span>
+                </button>
+                <button class="nav_btn" id='noNetwork'>
+                    <span id="noNetworkText"></span>
+                </button>
             </div>
-            <button class="nav_btn connect_btn" id="connect_wallet">
-                Connect Wallet
-            </button>
-            <button class="nav_btn" id='adderssbtn'>
-                <span id="wallet"></span>
-                <span id="walletSymbol"></span>
-                <span class="address" id='adderss'></span>
-            </button>
-            <button class="nav_btn" id='noNetwork'>
-                <span id="noNetworkText"></span>
-            </button>
         </div>
-
     </div>
     <div class="container-fluid">
         <div class="H2  DIP1"> DIP1:

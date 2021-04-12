@@ -25,6 +25,9 @@
   font-weight: 300;
   position: relative;
 }
+.bridge .nav .nav_mean {
+  width: 100%;
+}
 .bridge .nav #logo_svg {
   margin-top: 15px;
   height: 50px;
@@ -87,65 +90,54 @@
   line-height: 30px;
 }
 .bridge .nav .connect {
-  height: 54px;
-  position: absolute;
+  height: 80px;
   font-size: 16px;
   font-weight: 300;
-  margin: 16px 0;
-  right: 40px;
-  display: inline;
-}
-.bridge .nav .connect #adderssbtn {
-  position: relative;
-  display: none;
-}
-.bridge .nav .connect .network_text_logo {
-  position: relative;
-  display: inline;
-  margin-right: 13px;
-}
-.bridge .nav .connect .network_text_logo .logo_text {
-  position: relative;
-  margin-left: 16px;
-  display: inline;
-  color: #cccccc;
+  float: right;
+  display: flex;
+  align-items: center;
 }
 .bridge .nav .connect .network_text_logo i {
-  position: relative;
+  display: inline-block;
   width: 40px;
   height: 40px;
-  display: inline;
 }
 .bridge .nav .connect .network_text_logo .ETH {
-  position: relative;
   background-image: url('../img/logo-ethereum.png');
   background-position: 15px;
   background-repeat: no-repeat;
 }
 .bridge .nav .connect .network_text_logo .BNB {
-  position: relative;
   background-image: url('../img/logo-bsc.png');
   background-repeat: no-repeat;
 }
 .bridge .nav .connect .network_text_logo .HT {
-  position: relative;
   background-image: url('../img/logo-heco.png');
   background-position: 15px;
   background-repeat: no-repeat;
 }
+.bridge .nav .connect .logo_text {
+  margin-left: 16px;
+  display: inline;
+  margin-right: 13px;
+}
+.bridge .nav .connect #adderssbtn {
+  display: none;
+  font-weight: 300;
+  line-height: 33px;
+  font-family: korolev;
+}
 .bridge .nav .connect button {
-  position: relative;
   height: 48px;
   padding-left: 14px;
   padding-right: 14px;
-  word-spacing: 1px;
-  letter-spacing: -0.5px;
   color: #FFFFFF;
   background-color: #0D0E0F;
   font-weight: 300;
   line-height: 33px;
   background-image: url('../img/connect_bg.png');
   background-size: 100% 100%;
+  border-radius: 17px;
   outline: 0 none !important;
   border: 0;
   display: inline;
@@ -153,22 +145,22 @@
   white-space: nowrap;
 }
 .bridge .nav .connect button .address {
-  position: relative;
   color: #569BDA;
   margin-left: 5px;
+  font-family: korolev;
 }
 .bridge .nav .connect .nav_btn {
-  position: relative;
-  width: 220px;
   text-align: center;
+  font-weight: 300;
+  font-family: Korolev;
 }
 .bridge .nav .connect .connect_btn {
-  position: relative;
   width: 220px;
   text-align: center;
+  font-weight: 300;
+  font-family: Korolev;
 }
 .bridge .nav .connect #noNetwork {
-  position: relative;
   color: #E35061;
   display: none;
 }
