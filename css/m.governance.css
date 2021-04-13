@@ -43,14 +43,10 @@
   height: calc(42 * 100vh/812);
   float: left;
 }
-.bridge #m-nav #navigation .logo_deri .logo_svg {
+.bridge #m-nav #navigation .logo_deri .logo {
   float: left;
-  width: calc(30 * 100vh/812);
-  vertical-align: top;
-}
-.bridge #m-nav #navigation .logo_deri .DERI_svg {
-  float: left;
-  width: calc(30 * 100vh/812);
+  width: calc(60 * 100vh/812);
+  height: calc(35 * 100vh/812);
   vertical-align: top;
 }
 .bridge #m-nav #menu {
@@ -71,14 +67,10 @@
   margin: calc(8 * 100vh/812) 0 calc(8 * 100vh/812) calc((100% - 60 * 0.12315271vh) / 2);
   float: left;
 }
-.bridge #m-nav #menu #menu_top .logo_deri .logo_svg {
+.bridge #m-nav #menu #menu_top .logo_deri .logo {
   float: left;
-  width: calc(30 * 100vh/812);
-  vertical-align: top;
-}
-.bridge #m-nav #menu #menu_top .logo_deri .DERI_svg {
-  float: left;
-  width: calc(30 * 100vh/812);
+  width: calc(60 * 100vh/812);
+  height: calc(35 * 100vh/812);
   vertical-align: top;
 }
 .bridge #m-nav #menu #menu_top #X {

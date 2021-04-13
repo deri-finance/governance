@@ -27,14 +27,10 @@
 .bridge .nav .nav_mean {
   width: 100%;
 }
-.bridge .nav #logo_svg {
+.bridge .nav #logo {
   margin-top: 15px;
   height: 50px;
-  float: left;
-}
-.bridge .nav #DERI_svg {
-  margin: 15px 0;
-  height: 12.1px;
+  width: 85.79px;
   float: left;
 }
 .bridge .nav #index {
