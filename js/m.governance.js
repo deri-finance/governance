@@ -5,16 +5,16 @@ function to_index() {
 var docs_show = false
 
 $(function () {
-    $('.logo_svg').click(
+    $('.logo').click(
         function () {
             to_index()
         }
     )
-    $('.DERI_svg').click(
-        function () {
-            to_index()
-        }
-    )
+    // $('.DERI_svg').click(
+    //     function () {
+    //         to_index()
+    //     }
+    // )
     $('#menu-button').click(
         function () {
             $('#menu').animate({width: 'toggle'})

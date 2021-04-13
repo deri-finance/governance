@@ -3,16 +3,16 @@ function to_index() {
 }
 
 $(function () {
-    $('#logo_svg').click(
+    $('#logo').click(
         function () {
             to_index()
         }
     )
-    $('#DERI_svg').click(
-        function () {
-            to_index()
-        }
-    )
+    // $('#DERI_svg').click(
+    //     function () {
+    //         to_index()
+    //     }
+    // )
     $('#Docs').mouseover(
         function (){
             $('#docs_index_outer').show()
