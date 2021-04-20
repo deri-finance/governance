@@ -107,7 +107,7 @@
 .bridge #m-nav #menu #menus {
   height: calc(100vh - 150 * 100vh/812);
   font-size: calc(30 * 100vh/812);
-  font-family: Tachyon;
+  font-family: Tachyon, sans-serif;
   list-style: none;
   background-color: #000000;
   padding-top: calc(37 * 100vh/812);
@@ -329,7 +329,7 @@
   padding: 0;
   height: calc(158 * 100vh/812);
   width: 100%;
-  font-family: ArialMT;
+  font-family: Arial MT, sans-serif;
   line-height: 30px;
   font-size: 20px;
   font-weight: 300;
@@ -375,7 +375,7 @@
   font-weight: normal;
 }
 .H2 {
-  font-family: Tachyon;
+  font-family: Tachyon, sans-serif;
   font-weight: 300;
   color: #D4E05C;
   font-size: 32px;
