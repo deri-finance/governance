@@ -1,13 +1,30 @@
+@font-face {
+  font-family: Tachyon;
+  src: url("../fonts/Tachyon.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Termina;
+  src: url("../fonts/Termina.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Arial MT;
+  src: url("../fonts/ArialMT.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
 }
 .bridge {
   background-color: #1B1C22;
-  color: #ffffff;
   position: relative;
-  color: white;
-  font-family: ArialMT;
+  color: #cccccc;
+  font-family: Arial MT, sans-serif;
   line-height: 30px;
   font-size: 20px;
   font-weight: 300;
@@ -17,8 +34,7 @@
   padding: 0 40px;
   width: 100%;
   background-color: #0D0E0F;
-  color: white;
-  font-family: ArialMT;
+  font-family: Arial MT, sans-serif;
   line-height: 30px;
   font-size: 20px;
   font-weight: 300;
@@ -120,7 +136,7 @@
   display: none;
   font-weight: 300;
   line-height: 33px;
-  font-family: Arial MT;
+  font-family: Arial MT, sans-serif;
 }
 .bridge .nav .connect button {
   height: 48px;
@@ -142,18 +158,18 @@
 .bridge .nav .connect button .address {
   color: #569BDA;
   margin-left: 5px;
-  font-family: Arial MT;
+  font-family: Arial MT, sans-serif;
 }
 .bridge .nav .connect .nav_btn {
   text-align: center;
   font-weight: 300;
-  font-family: Arial MT;
+  font-family: Arial MT, sans-serif;
 }
 .bridge .nav .connect .connect_btn {
   width: 220px;
   text-align: center;
   font-weight: 300;
-  font-family: Arial MT;
+  font-family: Arial MT, sans-serif;
 }
 .bridge .nav .connect #noNetwork {
   color: #E35061;
@@ -229,11 +245,11 @@
 #copyright {
   padding: 0 40px;
   height: 120px;
-  font-family: ArialMT;
+  font-family: Arial MT, sans-serif;
   line-height: 30px;
   font-size: 20px;
   font-weight: 300;
-  color: white;
+  color: #cccccc;
 }
 #copyright #copyright_center {
   width: auto;
@@ -247,7 +263,7 @@
   float: left;
   font-size: 15px;
   font-weight: 300;
-  color: white;
+  color: #cccccc;
 }
 #copyright .copyright-L #copyright-L_index {
   list-style: none;
@@ -261,7 +277,7 @@
   color: #a9a9a9;
 }
 #copyright .copyright-L #copyright-L_index .menu_li a {
-  color: white;
+  color: #cccccc;
 }
 #copyright .copyright-L #copyright-L_index .menu_li a:hover {
   color: #569BDA;
@@ -306,7 +322,7 @@
   color: #569BDA;
 }
 .H2 {
-  font-family: Tachyon;
+  font-family: Tachyon, sans-serif;
   font-weight: 300;
   color: #D4E05C;
   font-size: 32px;
