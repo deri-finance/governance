@@ -1,13 +1,30 @@
+@font-face {
+  font-family: Tachyon;
+  src: url("../fonts/Tachyon.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Termina;
+  src: url("../fonts/Termina.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Arial MT;
+  src: url("../fonts/ArialMT.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
 }
 .bridge {
   background-color: #1B1C22;
-  color: #ffffff;
   position: absolute;
-  color: white;
-  font-family: ArialMT;
+  color: #cccccc;
+  font-family: Arial MT, sans-serif;
   line-height: 30px;
   font-size: 20px;
   font-weight: 300;
@@ -21,11 +38,10 @@
   width: 100%;
   z-index: 888;
   display: inline;
-  font-family: ArialMT;
+  font-family: Arial MT, sans-serif;
   line-height: 30px;
   font-size: 20px;
   font-weight: 300;
-  color: white;
 }
 .bridge #m-nav #navigation #menu-button {
   width: calc(24 * 100vh/812);
@@ -134,7 +150,7 @@
 .bridge #m-nav #menu #docs_index_outer #docs_index li a {
   color: #cccccc;
   font-size: calc(20 * 100vh/812);
-  font-family: Tachyon;
+  font-family: Tachyon, sans-serif;
   font-weight: 300;
   padding-left: calc(47 * 100vw/375);
 }
@@ -317,7 +333,7 @@
   line-height: 30px;
   font-size: 20px;
   font-weight: 300;
-  color: white;
+  color: #cccccc;
 }
 .m-copyright .line {
   width: 100%;
@@ -336,7 +352,7 @@
   width: calc(30 * 100vh/812);
   height: calc(30 * 100vh/812);
   border-radius: calc(15 * 100vh/812);
-  background-color: white;
+  background-color: #cccccc;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,7 +368,7 @@
 }
 .m-copyright .line2 {
   clear: left;
-  color: white;
+  color: #cccccc;
   padding-top: calc(15 * 100vh/812);
   font-size: calc(20 * 100vh/812);
   line-height: calc(30 * 100vh/812);
