@@ -25,13 +25,22 @@ $(function () {
             $('#menu').animate({width: 'toggle'})
         }
     )
+    // $('.show_wechat').click(
+    //     function () {
+    //         console.log(this)
+    //         a = $('.show_wechat').find('#wechat').css('background','green')
+    //         a.hide()
+    //         // console.log(a)
+    //         // $('#wechat').show()
+    //     }
+    // )
 })
 
-function docs(){
+function docs() {
     docs_show = !docs_show
-    if(docs_show){
+    if (docs_show) {
         $('#docs_index_outer').show()
-    }else{
+    } else {
         $('#docs_index_outer').hide()
     }
 

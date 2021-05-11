@@ -394,10 +394,36 @@
         position: relative;
         color: rgb(47, 47, 47);
       }
+
+      .wechat {
+        background-color: white;
+        background-image: url('../img/wechat.jpg');
+        background-size: cover;
+        border: 1px solid #707070;
+        width: 99px;
+        height: 99px;
+        border-radius: 10px;
+        display: none;
+        position: absolute;
+        top: -125px;
+        left: -55px;
+
+        .down_box {
+          border-right: 8px solid transparent;
+          border-left: 8px solid transparent;
+          border-bottom: 10px solid white;
+          position: absolute;
+          transform: rotate(180deg);
+          bottom: -10px;
+          right: 20px;
+        }
+      }
     }
 
     .circle:hover {
-      text-decoration: none;
+      .wechat {
+        display: block;
+      }
 
       .fa {
         position: relative;

@@ -478,10 +478,42 @@
           color: rgb(47, 47, 47);
           font-size: calc(20 * @h);
         }
+
+        .wechat {
+          background-color: white;
+          background-image: url('../img/wechat.jpg');
+          background-size: cover;
+          border: 1px solid #707070;
+          width: calc(99 * @h);
+          height: calc(99 * @h);
+          border-radius: calc(10 * @h);
+          position: absolute;
+          margin-top: calc(-180 * @h);
+          margin-left: calc(60 * @h);
+          display: none;
+
+          .down_box {
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-bottom: 10px solid white;
+            position: absolute;
+            transform: rotate(180deg);
+            bottom: -10px;
+            right: 70px;
+            z-index: 999;
+          }
+        }
       }
 
-      .circle {
-        margin-right: calc(36 * @h);
+      .circle:hover {
+        .wechat {
+          display: block;
+        }
+
+
+      }
+      .circle{
+        margin-right: calc(21 * @h);
       }
     }
   }
@@ -490,7 +522,7 @@
     clear: left;
     color: #cccccc;
     padding-top: calc(15 * @h);
-    font-size: calc(20 * @h);
+    font-size: calc(15 * @h);
     line-height: calc(30 * @h);
     font-weight: normal;
   }
