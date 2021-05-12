@@ -353,6 +353,7 @@
   height: calc(30 * 100vh/812);
   border-radius: calc(15 * 100vh/812);
   background-color: #cccccc;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,8 +374,8 @@
   height: calc(99 * 100vh/812);
   border-radius: calc(10 * 100vh/812);
   position: absolute;
-  margin-top: calc(-180 * 100vh/812);
-  margin-left: calc(60 * 100vh/812);
+  top: calc(-120 * 100vh/812);
+  left: calc(0 * 100vh/812);
   display: none;
 }
 .m-copyright .copyright_center .circles .circle .wechat .down_box,

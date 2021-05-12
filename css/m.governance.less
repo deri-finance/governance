@@ -469,6 +469,7 @@
         height: calc(30 * @h);
         border-radius: calc(15 * @h);
         background-color: #cccccc;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -488,8 +489,10 @@
           height: calc(99 * @h);
           border-radius: calc(10 * @h);
           position: absolute;
-          margin-top: calc(-180 * @h);
-          margin-left: calc(60 * @h);
+          //margin-top: calc(-180 * @h);
+          //margin-left: calc(60 * @h);
+          top: calc(-120 * @h);
+          left: calc(0 * @h);
           display: none;
 
           .down_box {
