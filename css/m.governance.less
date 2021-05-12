@@ -493,13 +493,13 @@
           display: none;
 
           .down_box {
-            border-right: 8px solid transparent;
-            border-left: 8px solid transparent;
-            border-bottom: 10px solid white;
+            border-right: calc(8 * @h) solid transparent;
+            border-left: calc(8 * @h) solid transparent;
+            border-bottom: calc(10 * @h) solid white;
             position: absolute;
             transform: rotate(180deg);
-            bottom: -10px;
-            right: 70px;
+            bottom: calc(-10 * @h);
+            right: calc(70 * @h);
             z-index: 999;
           }
         }
