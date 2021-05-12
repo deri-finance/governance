@@ -349,11 +349,11 @@
 .m-copyright .copyright_center .circles .circle,
 .m-copyright .copyright_center .circles .circle-no-margin {
   float: left;
+  position: relative;
   width: calc(30 * 100vh/812);
   height: calc(30 * 100vh/812);
   border-radius: calc(15 * 100vh/812);
   background-color: #cccccc;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,6 +376,7 @@
   position: absolute;
   top: calc(-120 * 100vh/812);
   left: calc(0 * 100vh/812);
+  z-index: 998;
   display: none;
 }
 .m-copyright .copyright_center .circles .circle .wechat .down_box,
@@ -389,11 +390,14 @@
   right: calc(70 * 100vh/812);
   z-index: 999;
 }
-.m-copyright .copyright_center .circles .circle:hover .wechat {
-  display: block;
-}
 .m-copyright .copyright_center .circles .circle {
   margin-right: calc(21 * 100vh/812);
+}
+.m-copyright .copyright_center .circles .circle:hover {
+  margin-right: calc(21 * 100vh/812);
+}
+.m-copyright .copyright_center .circles .circle:hover .wechat {
+  display: block;
 }
 .m-copyright .line2 {
   clear: left;

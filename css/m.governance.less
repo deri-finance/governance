@@ -465,11 +465,11 @@
     .circles {
       .circle, .circle-no-margin {
         float: left;
+        position: relative;
         width: calc(30 * @h);
         height: calc(30 * @h);
         border-radius: calc(15 * @h);
         background-color: #cccccc;
-        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -493,6 +493,7 @@
           //margin-left: calc(60 * @h);
           top: calc(-120 * @h);
           left: calc(0 * @h);
+          z-index: 998;
           display: none;
 
           .down_box {
@@ -508,15 +509,16 @@
         }
       }
 
+      .circle {
+        margin-right: calc(21 * @h);
+      }
+
       .circle:hover {
+        margin-right: calc(21 * @h);
+
         .wechat {
           display: block;
         }
-
-
-      }
-      .circle{
-        margin-right: calc(21 * @h);
       }
     }
   }
