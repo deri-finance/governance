@@ -242,7 +242,7 @@
 .bridge .container-fluid .radio .prele_bsc div span,
 .bridge .container-fluid .radio .prele_heco div span {
   position: absolute;
-  right: calc(-60 * 100vh/812);
+  right: calc(-65 * 100vh/812);
 }
 .bridge .container-fluid .radio .prele_eth .I-per,
 .bridge .container-fluid .radio .prele_bsc .I-per,
