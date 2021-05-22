@@ -3,6 +3,9 @@ BigNumber.config({
     ROUNDING_MODE: BigNumber.ROUND_DOWN,
     EXPONENTIAL_AT: 256
 });
+
+
+
 function bg(value, base=0) {
     if (base == 0) {
         return BigNumber(value);
@@ -71,6 +74,7 @@ class Chain {
         this.toChainId = null;
         this.fromChainId = null;
         this.DeriVote = null;
+        this.Deri = null;
         this.votingoptions = null;
 
         this.multiplier = null;
@@ -111,14 +115,39 @@ class Chain {
             return {success: false, error: 'Cannot connect wallet'};
         }
     }
-    async liquidateEvent() {
-        return await this.pool.getPastEvents("Liquidate", {
-            filter: {owner:this.account}, // Using an array means OR: e.g. 20 or 23
-            fromBlock: 0,
-            toBlock: 'latest'
-           }, function (error, events) {
-            return events;
-           });
+    async isUnlocked() {
+        let allowance = await this.Deri.methods['allowance'](this.account, this.addresses.DeriVote).call();
+        console.log(allowance)
+        allowance = deri_natural(allowance);
+        console.log( allowance.gt(0))
+        return allowance.gt(0);
+    }
+    async votingsForOptions(optionId){
+        let res = await this.DeriVote.methods['votingsForOptions'](1,optionId).call();
+        return deri_natural(res).toString();
+    }
+    async unlock() {
+        let gas = 0;
+        let res;
+        try {
+            for (let i = 0; i < 20; i++) {
+                try {
+                    gas = await this.Deri.methods['approve'](this.addresses.DeriVote, '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff').estimateGas({'from': this.account});
+                    gas = parseInt(gas * 1.25);
+                    break;
+                } catch (err) {
+    
+                }
+            }
+            if (gas == 0) gas = 532731;
+            if(gas>532731) gas = 532731;
+            let tx = await this.Deri.methods['approve'](this.addresses.DeriVote,'0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff').send({'from': this.account, 'gas': gas});
+            res = { success: true, transaction: tx };
+        } catch (error) {
+            res = { success: false, error: err };
+        }
+        return res
+        
     }
     async initialize(index=0,type) {
         await this._initializeContracts(index,type);
@@ -126,26 +155,25 @@ class Chain {
     }
 
     async getUserWalletBalence(account){
-
         let balance = await this.web3.eth.getBalance(account);
         const res = Web3.utils.fromWei(balance)
         return res
+    }
+    async getWalletDeri(account){
+        let bDecimals = await this.Deri.methods['decimals']().call();
+        let balance = await this.Deri.methods['balanceOf'](account).call();
+        return bg(balance, -bDecimals);
     }
 
     //================================================================================
     // Interfaces
     //================================================================================
-    async getvotingOptions(){
-        let votingoptions = await this.DeriVote.methods['votingOptions'](1,this.account).call();
-        this.votingoptions = votingoptions;
-        console.log(votingoptions)
-        return votingoptions;
-    }
-    async vote(votingoptions){
+   
+    async vote(optionId, amount){
         let gas = 0;
         for (let i = 0; i < 20; i++) {
             try {
-                gas = await this.DeriVote.methods['vote'](votingoptions).estimateGas({'from': this.account});
+                gas = await this.DeriVote.methods['vote'](optionId, natural_deri(amount)).estimateGas({'from': this.account});
                 gas = parseInt(gas * 1.25);
                 break;
             } catch (err) {
@@ -154,7 +182,7 @@ class Chain {
         }
         if (gas == 0) gas = 532731;
         if(gas>532731) gas = 532731;
-        let tx = await this.DeriVote.methods['vote'](votingoptions).send({'from': this.account, 'gas': gas});
+        let tx = await this.DeriVote.methods['vote'](optionId, natural_deri(amount)).send({'from': this.account, 'gas': gas});
         return tx;
     }
 
@@ -224,7 +252,9 @@ class Chain {
             this.chanId = this.addresses.chanId;
             this.abifiles = config.abifiles;
             let DeriVoteAbi = await this._readjson(this.abifiles.DeriVote);
+            let DeriAbi = await this._readjson(this.abifiles.Deri);
             this.DeriVote = new this.web3.eth.Contract(DeriVoteAbi, this.addresses.DeriVote);
+            this.Deri = new this.web3.eth.Contract(DeriAbi,this.addresses.Deri)
         } catch (err) {
             console.log(`Chain: _initializeContracts() error: ${err}`);
         }

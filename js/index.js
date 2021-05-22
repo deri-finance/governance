@@ -1,7 +1,10 @@
 $(function () {
     var adderss, type = 0, votingoptions;
     var contract = new Chain();
+    var MaxDeri;
+    var sum = 0; 
     $('#vote').on('click', vote)
+    $('#unlock').on('click', unlock)
     connectWallet();
 
     $('#connect_wallet').click(
@@ -9,44 +12,49 @@ $(function () {
             connectWallet();
         }
     )
-
-
+    function unlock(){
+        let button = $('#unlock')
+        disableButton(button)
+        contract.unlock().then(res=>{
+            console.log(res)
+            if(res.success){
+                $('#unlock').hide();
+                $('#vote').show();
+            }else{
+                $('#unlock').show();
+                $('#vote').hide();
+            }
+            enableButton(button)
+        })
+    }
     function vote() {
         let button = $('#vote')
-        if (votingoptions) {
-            disableButton(button)
-            contract.vote(votingoptions).then(res => {
-                enableButton(button)
-                getvotingOptions()
-            }).catch(err => {
-                enableButton(button)
-                getvotingOptions()
-            })
-        } else {
-
+        let num =  +$('#deri-num').val();
+        let id = $("input[name='network']:checked").val()
+        console.log(num,MaxDeri)
+        if(!id){   
+            alert('Please choose one option.')     
+            return;
         }
-    }
-
-    function getvotingOptions() {
-        contract.getvotingOptions().then(res => {
-            let text;
-            if (res == 1) {
-                text = 'I'
-            }
-            if (res == 2) {
-                text = 'II'
-            }
-            if (res == 3) {
-                text = 'III'
-            }
-            if (res == 0) {
-                text = ''
-            }
-            $('#vote_o').text(`${text}`)
+        if(num > MaxDeri){
+            alert('Insufficient balance in wallet');
+            return;
+        }
+        disableButton(button)
+        contract.vote(+id,num).then(res => {
+            enableButton(button)
+            votingsForOptions()
+            getWalletBalance();
+        }).catch(err => {
+            enableButton(button)
+            votingsForOptions()
+            getWalletBalance()
         })
     }
 
-    function connectWallet() {
+   
+
+    async function connectWallet() {
         contract.connectWallet().then((res) => {
             if (res.success) {
                 window.ethereum.request({ method: "net_version" }).then(id=>{
@@ -74,11 +82,11 @@ $(function () {
                     $('#noNetwork').show()
                     $('#connect_wallet').hide();
                     return
-                }
+                } 
+                
                 contract.initialize(0, type).then(() => {
                     adderss = contract.account
                     let account = contract.account;
-                    let chainId = contract.chanId
                     account = account.slice(0, 6) +
                         "..." +
                         account.slice(account.length - 4, account.length);
@@ -86,29 +94,17 @@ $(function () {
                     $('#connect_wallet').hide();
                     $('#adderssbtn').css('display', 'inline');
                     $('#network_text_logo').css('display', 'inline');
-
-                    contract.getUserWalletBalence(contract.account).then((res) => {
-
-                        $('#wallet').text(parseFloat(res).toFixed(4));
-                    });
-
-                    getvotingOptions();
-                    getDeriVotingPower(+chainId, contract.account).then((res) => {
-                        let power;
-                        let balanceOfDeri = +res.balanceOfDeri;
-                        let balanceOfSlp = +res.balanceOfSlp;
-                        let totalDeriOnSushi = +res.totalDeriOnSushi;
-                        let totalSupply = +res.totalSupply;
-                        let tot;
-                        if (totalSupply == 0) {
-                            tot = 0;
-                            power = balanceOfDeri
-                        } else {
-                            power = balanceOfDeri + (balanceOfSlp * totalDeriOnSushi / totalSupply)
-                            tot = balanceOfSlp * totalDeriOnSushi / totalSupply
+                    contract.isUnlocked().then(res=>{
+                        if(res){
+                            $('#unlock').hide();
+                            $('#vote').show();
+                        }else{
+                            $('#unlock').show();
+                            $('#vote').hide();
                         }
-                        $('.power').text(`${balanceOfDeri} + ${tot} = ${power}`)
-                    });
+                    })
+                    votingsForOptions();
+                    getWalletBalance();
                 })
                 })
 
@@ -117,7 +113,83 @@ $(function () {
             }
         })
     }
-
+    function getWalletBalance(){
+        contract.getUserWalletBalence(contract.account).then((res) => {
+            $('#wallet').text(parseFloat(res).toFixed(4));
+        });
+        contract.getWalletDeri(contract.account).then(res=>{
+            MaxDeri = parseInt(res);
+            $('.wallet-deri').text(parseInt(res))
+        })
+    }
+    async function maxderi(){
+        for(let i = 0;i<10;i++){
+            let res =  await contract.votingsForOptions(i)
+            sum += +res;
+        }  
+    }
+    async function votingsForOptions(){
+        await maxderi();
+        for(let i = 0;i<10;i++){
+            let per;
+            let res =  await contract.votingsForOptions(i)
+            res = parseInt(res)
+            switch (i) {
+                case 0:
+                    $('.one').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.I-per').css( "width",`${per}%`)
+                    break;
+                case 1:
+                    $('.two').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.II-per').css( "width",`${per}%`)
+                    break;
+                case 2:
+                    $('.three').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.III-per').css( "width",`${per}%`)
+                    break;
+                case 3:
+                    $('.four').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.IV-per').css( "width",`${per}%`)
+                    break;
+                case 4:
+                    $('.five').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.V-per').css( "width",`${per}%`)
+                    break;
+                case 5:
+                    $('.six').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.VI-per').css( "width",`${per}%`)
+                    break;
+                case 6:
+                    $('.seven').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.VII-per').css( "width",`${per}%`)
+                    break;
+                case 7:
+                    $('.eight').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.VIII-per').css( "width",`${per}%`)
+                    break;
+                case 8:
+                    $('.nine').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.IX-per').css( "width",`${per}%`)
+                    break;
+                case 9:
+                    $('.ten').text(`${res} DERI`)
+                    per = (+res/+sum) * 100;
+                    $('.X-per').css( "width",`${per}%`)
+                    break;
+                default:
+                    break;
+            }
+        }  
+    }
     function disableButton(button) {
         button.find("span.spinner").show();
         button.attr("disabled", true);

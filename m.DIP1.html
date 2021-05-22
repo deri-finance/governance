@@ -132,155 +132,55 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="H2 DIP1">Meme Coin Index Inclusion Voting</div>
+        <div class="H2 DIP1">DIP1:Please vote for one of the following options:</div>
         <div class="flex">
             <div>
-                As the DERI PROTOCOL Meme Coin Index (iMEME) is now live, Meme coin index inclusion voting which allows DERI holders to vote on new additions of the iMEME has kicked off based on feedback from the whole community. 
+                I. Share transaction fee with the DERI holders:<br>
+                20% of the transaction fee will be put into a pool, in which one can stake DERI to get xDERI. xDERI
+                holders will share the transaction fee income of the pool.
+                <br><br>
+                II. Buy back DERI with transaction fee income:<br>
+                20% of the transaction fee will be put into a DAO fund, which is to regularly buy back DERI from
+                secondary market and burned (i.e. recycled to be mined again).
+                <br><br>
+                III. Keep the status quo
             </div>
         </div>
         <div class="radio">
             <div>
                 <div class="fle">
                     <div class="rad">
-                        <input type="radio" name="network" value="0" id='I'/> <Label for="I">I: $AKITA
-                        </Label>
+                        <input type="radio" name="network" id='eth'/> <Label for="eth">I</Label>
                     </div>
 
                     <div class="prele_eth">
-                        <div class="I-per">
-                            <span class="one"></span> 
-                        </div>
-                        
+                        <div class="pre_eth"></div>
+                        158,544 DERI
                     </div>
                 </div>
                 <div class="fle">
                     <div class="rad">
-                        <input type="radio" name="network" value="1" id='II'/> <Label for="II">II: $ASS
-                        </Label>
+                        <input type="radio" name="network" id='bsc'/> <Label for="bsc">II</Label>
                     </div>
 
                     <div class="prele_bsc">
-                        <div class="II-per">
-                            <span class="two"></span> 
-                        </div>
-                        
+                        <div class="pre_bsc"></div>
+                        334,253 DERI
                     </div>
                 </div>
                 <div class="fle">
                     <div class="rad">
-                        <input type="radio" name="network" value="2" id='III'/> <Label for="III">III: $BAN
-                        </Label>
+                        <input type="radio" name="network" id='heco'/> <Label for="heco">III</Label>
                     </div>
                     <div class="prele_heco">
-                        <div class="III-per">
-                            <span class="three"></span> 
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="fle">
-                    <div class="rad">
-                        <input type="radio" name="network" value="3" id='IV'/> <Label for="IV">IV: $CUMMIES
-                        </Label>
-                    </div>
-
-                    <div class="prele_eth">
-                        <div class="IV-per">
-                            <span class="four"></span> 
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="fle">
-                    <div class="rad">
-                        <input type="radio" name="network" value="4" id='V'/> <Label for="V">V: $ERC20
-                        </Label>
-                    </div>
-
-                    <div class="prele_bsc">
-                        <div class="V-per">
-                            <span class="five"></span> 
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="fle">
-                    <div class="rad">
-                        <input type="radio" name="network" value="5" id='VI'/> <Label for="VI">VI: $HOGE</Label>
-                    </div>
-                    <div class="prele_heco">
-                        <div class="VI-per">
-                            <span class="six"></span> 
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="fle">
-                    <div class="rad">
-                        <input type="radio" name="network" value="6" id='VII'/> <Label for="VII">VII: $HOKK</Label>
-                    </div>
-
-                    <div class="prele_eth">
-                        <div class="VII-per">
-                            <span class="seven"></span> 
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="fle">
-                    <div class="rad">
-                        <input type="radio" name="network" value="7" id='VIII'/> <Label for="VIII">VIII: $KISHU</Label>
-                    </div>
-
-                    <div class="prele_bsc">
-                        <div class="VIII-per">
-                            <span class="eight"></span> 
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="fle">
-                    <div class="rad">
-                        <input type="radio" name="network" value="8" id='IX'/> <Label for="IX">IX: $LABRA</Label>
-                    </div>
-                    <div class="prele_heco">
-                        <div class="IX-per">
-                            <span class="nine"></span> 
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="fle">
-                    <div class="rad">
-                        <input type="radio" name="network" value="9" id='X'/> <Label for="X">X: $SAFEMARS </Label>
-                    </div>
-                    <div class="prele_heco">
-                        <div class="X-per">
-                            <span class="ten"></span> 
-                        </div>
-                        
+                        <div class="pre_heco"></div>
+                        0 DERI
                     </div>
                 </div>
 
             </div>
             <div>
-                Wallet Balance: <span class="wallet-deri"></span> DERI
-            </div>
-            <div>
-                <input type="number" id="deri-num" placeholder="Amount" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')"> 
-                <span class="basetoken">DERI</span> 
-            </div>
-            <div>
-                <button id='unlock'>
-                    <span
-                        class="spinner spinner-border spinner-border-sm"
-                        role="status"
-                        aria-hidden="true"
-                        style="display: none"
-                        ></span>
-                    APPROVE
-                </button>
-                <button id="vote">
+                <button id="vote" disabled>
                         <span
                                 class="spinner spinner-border spinner-border-sm"
                                 role="status"
@@ -290,33 +190,32 @@
                     VOTE
                 </button>
             </div>
-            
+            <div>
+                Voting ended
+            </div>
+            <div class="checked">
+                Your vote : <span id="vote_o"></span>
+            </div>
+            <div>
+                Your voting power: <span class="power"></span>
+            </div>
             <br>
             <div>
                 <span class="H2">Voting rules:</span><br><br>
-                1. One DERI one vote, you can input the vote number as you want. <br><br>
-                2. The most popular meme coin will be added to the Meme Coin Index.<br><br>
+                1. Your voting power is your DERI balance + the corresponding DERI amount of your DERI-USDT SLP balance
+                on Sushiswap as of the deadline. The precise formula is:<br>
+                Voting Power = balanceOf(DERI) + balanceOf(DERI-USDT SLP) * totalDERIonSushi / totalSupply(DERI-USDT
+                SLP)<br><br>
+                2. You can choose any of the 3 chains (ETH/BSC/HECO) to sign your vote by the deadline<br><br>
                 3. Voting Deadline = 2021 March 19th 4:00:00AM UTC<br><br>
-                4. Voting Period from 10:00 May 22, 2021 to 10:00:00 May 27, 2021 (UTC)<br><br>
-                All the DERI collected will be recycled to be mined again. 
-
+                4. A snapshot will be taken at the block at deadline and used to calculate the result. That is, if you
+                vote before the deadline but have transferred your DERI or SLP before deadline, it is the balance at the
+                deadline that counts.
             </div>
             <br>
             <br>
             <br>
-            <div class="dip-list">
-                <div class="list-title">
-                    <div>
-                        <span class="title">DIP List</span><br>
-                        <span>DIP stands for Deri Protocol Improvement Proposal. </span>
-                    </div>
-                </div>
-                <div class="list-text">
-                    <span>DIP1: Please vote for one of the following options</span>
-                    <a href="m.DIP1.html"><button>Detail</button></a> 
-                </div>
-                <div></div>
-            </div>
+            
         </div>
     </div>
     <div class="m-copyright">
@@ -357,7 +256,7 @@
 <script src="./js/web/web3-1.3.0.min.js"></script>
 <script src="./js/deri_vote.js"></script>
 <script src="./js/chain.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/index1.js"></script>
 <script src="./js/m.governance.js"></script>
 </body>
 

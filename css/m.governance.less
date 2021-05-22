@@ -273,8 +273,24 @@
       width: calc(100vw - 20 * @w);
       margin: 0 auto;
       margin-top: calc(30 * @h);
-
-      #vote {
+      font-size: calc(16 * @h);
+      #deri-num{
+        height: calc(50 * @h);
+        width: calc(260 * @h);
+        padding-left: 10px;
+        border: 0;
+        color: #000;
+        background: #ffffff;
+        outline: none;
+      }
+      .wallet-deri{
+        font-weight: bold;
+      }
+      .basetoken{
+        position: relative;
+        top: 15px;
+      }
+      #vote,#unlock{
         background-image: linear-gradient(90deg, #09d3af 0%, #09b8c2 18%, #0965ff 100%);
         border-radius: calc(24 * @h);
         height: calc(38 * @h);
@@ -282,43 +298,124 @@
         color: #fff;
         width: calc(200 * @h);
         font-weight: 500;
+        margin-top: 20px;
       }
-
+      #vote{
+        display: none;
+      }
       .fle {
         display: flex;
         //justify-content: space-between;
       }
 
       .rad {
-        width: 40px;
+        width: 160px;
+        font-size: calc(16 * @h);
       }
 
       .prele_eth, .prele_bsc, .prele_heco {
         display: inline-block;
-        //width: 100%;
+        width: 75%;
         height: 20px;
         line-height: 20px;
-
-        .pre_eth {
-          width: 21vw;
+        div{
+          position: relative;
+          span{
+            position: absolute;
+            right: calc(-55 * @h);
+          }
+        }
+        .I-per {
           height: 20px;
           display: inline-block;
           background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
         }
 
-        .pre_bsc {
-          width: 46vw;
-          //width: 69%;
+        .II-per {
           height: 20px;
           display: inline-block;
           background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
         }
 
-        .pre_heco {
-          width: 0;
+        .III-per {
           height: 20px;
           display: inline-block;
           background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+        .IV-per {
+          height: 20px;
+          display: inline-block;
+          background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+        .V-per {
+          height: 20px;
+          display: inline-block;
+          background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+        .VI-per {
+          height: 20px;
+          display: inline-block;
+          background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+        .VII-per {
+          height: 20px;
+          display: inline-block;
+          background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+        .VIII-per {
+          height: 20px;
+          display: inline-block;
+          background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+        .IX-per {
+          height: 20px;
+          display: inline-block;
+          background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+        .X-per {
+          height: 20px;
+          display: inline-block;
+          background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+        }
+      }
+      .dip-list{
+        .list-title{
+          background-image: url('../img/DIP-list.jpg');
+          background-size: 100% 100%;
+          height:  calc(110 * @w);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 5px;
+          .title{
+            font-family: Tachyon, sans-serif;
+            font-weight: 300;
+            font-size: calc(32 * @h);
+            letter-spacing: 2px;
+          }
+        }
+        .list-text{
+          height:  calc(60 * @h);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border: 2px solid #707070;
+          margin: 30px 0;
+          border-radius: 2px;
+          padding: 0 15px 0 15px;
+          button{
+            border: 0;
+            line-height: 30px;
+            text-align: center;
+            width:  calc(71 * @w);
+            height:  calc(38 * @h);
+            font-size: calc(14 * @h);
+            font-weight: bold;
+            background-image: linear-gradient(
+90deg
+, #09d3af 0%, #09b8c2 18%, #0965ff 100%);
+    border-radius: 24px;
+          }
         }
       }
     }

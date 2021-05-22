@@ -186,8 +186,26 @@
   width: calc(100vw - 20 * 100vw/375);
   margin: 0 auto;
   margin-top: calc(30 * 100vh/812);
+  font-size: calc(16 * 100vh/812);
 }
-.bridge .container-fluid .radio #vote {
+.bridge .container-fluid .radio #deri-num {
+  height: calc(50 * 100vh/812);
+  width: calc(260 * 100vh/812);
+  padding-left: 10px;
+  border: 0;
+  color: #000;
+  background: #ffffff;
+  outline: none;
+}
+.bridge .container-fluid .radio .wallet-deri {
+  font-weight: bold;
+}
+.bridge .container-fluid .radio .basetoken {
+  position: relative;
+  top: 15px;
+}
+.bridge .container-fluid .radio #vote,
+.bridge .container-fluid .radio #unlock {
   background-image: linear-gradient(90deg, #09d3af 0%, #09b8c2 18%, #0965ff 100%);
   border-radius: calc(24 * 100vh/812);
   height: calc(38 * 100vh/812);
@@ -195,43 +213,142 @@
   color: #fff;
   width: calc(200 * 100vh/812);
   font-weight: 500;
+  margin-top: 20px;
+}
+.bridge .container-fluid .radio #vote {
+  display: none;
 }
 .bridge .container-fluid .radio .fle {
   display: flex;
 }
 .bridge .container-fluid .radio .rad {
-  width: 40px;
+  width: 160px;
+  font-size: calc(16 * 100vh/812);
 }
 .bridge .container-fluid .radio .prele_eth,
 .bridge .container-fluid .radio .prele_bsc,
 .bridge .container-fluid .radio .prele_heco {
   display: inline-block;
+  width: 75%;
   height: 20px;
   line-height: 20px;
 }
-.bridge .container-fluid .radio .prele_eth .pre_eth,
-.bridge .container-fluid .radio .prele_bsc .pre_eth,
-.bridge .container-fluid .radio .prele_heco .pre_eth {
-  width: 21vw;
+.bridge .container-fluid .radio .prele_eth div,
+.bridge .container-fluid .radio .prele_bsc div,
+.bridge .container-fluid .radio .prele_heco div {
+  position: relative;
+}
+.bridge .container-fluid .radio .prele_eth div span,
+.bridge .container-fluid .radio .prele_bsc div span,
+.bridge .container-fluid .radio .prele_heco div span {
+  position: absolute;
+  right: calc(-55 * 100vh/812);
+}
+.bridge .container-fluid .radio .prele_eth .I-per,
+.bridge .container-fluid .radio .prele_bsc .I-per,
+.bridge .container-fluid .radio .prele_heco .I-per {
   height: 20px;
   display: inline-block;
   background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
 }
-.bridge .container-fluid .radio .prele_eth .pre_bsc,
-.bridge .container-fluid .radio .prele_bsc .pre_bsc,
-.bridge .container-fluid .radio .prele_heco .pre_bsc {
-  width: 46vw;
+.bridge .container-fluid .radio .prele_eth .II-per,
+.bridge .container-fluid .radio .prele_bsc .II-per,
+.bridge .container-fluid .radio .prele_heco .II-per {
   height: 20px;
   display: inline-block;
   background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
 }
-.bridge .container-fluid .radio .prele_eth .pre_heco,
-.bridge .container-fluid .radio .prele_bsc .pre_heco,
-.bridge .container-fluid .radio .prele_heco .pre_heco {
-  width: 0;
+.bridge .container-fluid .radio .prele_eth .III-per,
+.bridge .container-fluid .radio .prele_bsc .III-per,
+.bridge .container-fluid .radio .prele_heco .III-per {
   height: 20px;
   display: inline-block;
   background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .prele_eth .IV-per,
+.bridge .container-fluid .radio .prele_bsc .IV-per,
+.bridge .container-fluid .radio .prele_heco .IV-per {
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .prele_eth .V-per,
+.bridge .container-fluid .radio .prele_bsc .V-per,
+.bridge .container-fluid .radio .prele_heco .V-per {
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .prele_eth .VI-per,
+.bridge .container-fluid .radio .prele_bsc .VI-per,
+.bridge .container-fluid .radio .prele_heco .VI-per {
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .prele_eth .VII-per,
+.bridge .container-fluid .radio .prele_bsc .VII-per,
+.bridge .container-fluid .radio .prele_heco .VII-per {
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .prele_eth .VIII-per,
+.bridge .container-fluid .radio .prele_bsc .VIII-per,
+.bridge .container-fluid .radio .prele_heco .VIII-per {
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .prele_eth .IX-per,
+.bridge .container-fluid .radio .prele_bsc .IX-per,
+.bridge .container-fluid .radio .prele_heco .IX-per {
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .prele_eth .X-per,
+.bridge .container-fluid .radio .prele_bsc .X-per,
+.bridge .container-fluid .radio .prele_heco .X-per {
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #09D3AF 0%, #09B8C2 18%, #0965FF 100%);
+}
+.bridge .container-fluid .radio .dip-list .list-title {
+  background-image: url('../img/DIP-list.jpg');
+  background-size: 100% 100%;
+  height: calc(110 * 100vw/375);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.bridge .container-fluid .radio .dip-list .list-title .title {
+  font-family: Tachyon, sans-serif;
+  font-weight: 300;
+  font-size: calc(32 * 100vh/812);
+  letter-spacing: 2px;
+}
+.bridge .container-fluid .radio .dip-list .list-text {
+  height: calc(60 * 100vh/812);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #707070;
+  margin: 30px 0;
+  border-radius: 2px;
+  padding: 0 15px 0 15px;
+}
+.bridge .container-fluid .radio .dip-list .list-text button {
+  border: 0;
+  line-height: 30px;
+  text-align: center;
+  width: calc(71 * 100vw/375);
+  height: calc(38 * 100vh/812);
+  font-size: calc(14 * 100vh/812);
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #09d3af 0%, #09b8c2 18%, #0965ff 100%);
+  border-radius: 24px;
 }
 .bridge #m-Wallet {
   position: fixed;
@@ -414,4 +531,3 @@
   font-size: 32px;
   letter-spacing: 2px;
 }
-/*# sourceMappingURL=m.governance.css.map */

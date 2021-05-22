@@ -17,21 +17,24 @@
         [
             {
             
-                "DeriVote": "0xb2b6907AdDa5a13673849CBD448f31be9C4A7424",
+                "DeriVote": "0x7ed34aAAeB9b6c61E4fE8E00Ab585e8C4ADF3aC3",
+                "Deri":"0xA487bF43cF3b10dffc97A9A744cbB7036965d3b9",
                 "chanId":"1"
             }
         ],
         [
             {
             
-                "DeriVote": "0x27c116474D4E08df0A13935AF508E8922271F891",
+                "DeriVote": "0x8186426D1CAE1c9a1B814f3CC00186Bb4550D7F4",
+                "Deri":"0xe60eaf5A997DFAe83739e035b005A33AfdCc6df5",
                 "chanId":"56"
             }
         ],
         [
             {
             
-                "DeriVote": "0x3752D67bfBe945a89787c7F6758A47C2D52988d4",
+                "DeriVote": "0x50a6A6b2e06560c60f04b92df07C059FfDe5E0b6",
+                "Deri":"0x2bdA3e331Cf735D9420e41567ab843441980C4B8",
                 "chanId":"128"
             }
         ]
@@ -40,7 +43,8 @@
     ],
     
     "abifiles": {
-        "DeriVote": "DeriVote.abi"
+        "DeriVote": "DeriVoteWithPayment.abi",
+        "Deri":"Deri.abi"
     },
 
     "methods": {
