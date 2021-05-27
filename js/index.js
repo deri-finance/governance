@@ -3,8 +3,8 @@ $(function () {
     var contract = new Chain();
     var MaxDeri;
     var sum = 0; 
-    $('#vote').on('click', vote)
-    $('#unlock').on('click', unlock)
+    // $('#vote').on('click', vote)
+    // $('#unlock').on('click', unlock)
     connectWallet();
 
     $('#connect_wallet').click(
@@ -94,15 +94,15 @@ $(function () {
                     $('#connect_wallet').hide();
                     $('#adderssbtn').css('display', 'inline');
                     $('#network_text_logo').css('display', 'inline');
-                    contract.isUnlocked().then(res=>{
-                        if(res){
-                            $('#unlock').hide();
-                            $('#vote').show();
-                        }else{
-                            $('#unlock').show();
-                            $('#vote').hide();
-                        }
-                    })
+                    // contract.isUnlocked().then(res=>{
+                    //     if(res){
+                    //         $('#unlock').hide();
+                    //         $('#vote').show();
+                    //     }else{
+                    //         $('#unlock').show();
+                    //         $('#vote').hide();
+                    //     }
+                    // })
                     votingsForOptions();
                     getWalletBalance();
                 })

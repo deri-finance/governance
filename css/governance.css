@@ -219,9 +219,6 @@
   font-weight: 500;
   margin-top: 20px;
 }
-.bridge .container-fluid .radio #vote {
-  display: none;
-}
 .bridge .container-fluid .radio .fle {
   display: flex;
   justify-content: space-between;
