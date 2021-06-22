@@ -13,8 +13,8 @@
     "static/css/4.9d50503a.chunk.css": "/static/css/4.9d50503a.chunk.css",
     "static/js/4.8a1c641a.chunk.js": "/static/js/4.8a1c641a.chunk.js",
     "static/js/4.8a1c641a.chunk.js.map": "/static/js/4.8a1c641a.chunk.js.map",
-    "static/js/5.bb069402.chunk.js": "/static/js/5.bb069402.chunk.js",
-    "static/js/5.bb069402.chunk.js.map": "/static/js/5.bb069402.chunk.js.map",
+    "static/js/5.05b35094.chunk.js": "/static/js/5.05b35094.chunk.js",
+    "static/js/5.05b35094.chunk.js.map": "/static/js/5.05b35094.chunk.js.map",
     "static/css/6.4910d928.chunk.css": "/static/css/6.4910d928.chunk.css",
     "static/js/6.6bf75612.chunk.js": "/static/js/6.6bf75612.chunk.js",
     "static/js/6.6bf75612.chunk.js.map": "/static/js/6.6bf75612.chunk.js.map",
@@ -22,10 +22,10 @@
     "static/js/7.48a20ee8.chunk.js": "/static/js/7.48a20ee8.chunk.js",
     "static/js/7.48a20ee8.chunk.js.map": "/static/js/7.48a20ee8.chunk.js.map",
     "main.css": "/static/css/main.26e5397a.chunk.css",
-    "main.js": "/static/js/main.fafb1502.chunk.js",
-    "main.js.map": "/static/js/main.fafb1502.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.faa65bb6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.faa65bb6.js.map",
+    "main.js": "/static/js/main.56960478.chunk.js",
+    "main.js.map": "/static/js/main.56960478.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.292dfe01.js",
+    "runtime-main.js.map": "/static/js/runtime-main.292dfe01.js.map",
     "static/css/10.a747e6f3.chunk.css": "/static/css/10.a747e6f3.chunk.css",
     "static/js/10.df5a6065.chunk.js": "/static/js/10.df5a6065.chunk.js",
     "static/js/10.df5a6065.chunk.js.map": "/static/js/10.df5a6065.chunk.js.map",
@@ -145,10 +145,10 @@
     "static/media/menu.less": "/static/media/wechat.e3793154.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.faa65bb6.js",
+    "static/js/runtime-main.292dfe01.js",
     "static/css/10.a747e6f3.chunk.css",
     "static/js/10.df5a6065.chunk.js",
     "static/css/main.26e5397a.chunk.css",
-    "static/js/main.fafb1502.chunk.js"
+    "static/js/main.56960478.chunk.js"
   ]
 }
